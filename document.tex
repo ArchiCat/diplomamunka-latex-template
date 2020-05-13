@@ -6,11 +6,13 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{subfig}
-\usepackage[titletoc]{appendix}
+
 \usepackage{pdfpages}
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage{hyperref}
+%\usepackage{bookmark}
+
 \usepackage{fontawesome} % egyedi listajelekhez például
 \hypersetup{
 	colorlinks=true,
@@ -23,8 +25,14 @@
 \usemintedstyle{tango}
 \usepackage{verbatim}
 
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
+\def\magyarOptions{defaults=prettiest}
 \usepackage[magyar]{babel} % magyarra nyelvi csomag
+\usepackage[titletoc]{appendix}
+
+\makeatletter
+\appto{\appendices}{\def\Hy@chapapp{Appendix}}
+\makeatother
 
 \setlength{\parindent}{0 mm} % behúzás mértékét állíthatjuk be
 
@@ -78,7 +86,7 @@
 	
 	\section{Ábrák}
 	
-	\begin{figure}[h!]
+	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{img/ur5robot.png}
 		\caption[UR5 Koolabortív robot]{UR5 Kollaboratív robot (forrás: http://universalrobots.com)}
@@ -102,7 +110,7 @@
 	\section{Táblázatok}
 	Példaként itt látható egy táblázat (\ref{tab:ur5}. Táblázat)
 	
-	\begin{table}[]
+	\begin{table}[H]
 		\centering
 		\caption{AZ UR5 robot főbb paraméterei}
 		\label{tab:ur5}
@@ -122,7 +130,7 @@
 	\end{table}
 
 	Egy másik táblázat.
-	\begin{table}
+	\begin{table}[H]
 	\centering
 	\begin{tabular}{ccccc}
 		Robotcsukló & \begin{tabular}[c]{@{}c@{}}min. poz.\\ {[}rad{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}max. poz.\\ {[}rad{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}max. sebesség\\ {[}rad/s{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}max. gyorsulás\\ {[}rad/s\textasciicircum{}2{]}\end{tabular} \\
