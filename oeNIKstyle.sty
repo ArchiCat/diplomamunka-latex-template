@@ -33,7 +33,7 @@
 \usepackage{algpseudocode}
 
 
-\ProvidesPackage{oeNIKstyle}[2018/05/16 v.02 OE-NIK Latex Template by Rácz Dániel]
+\ProvidesPackage{oeNIKstyle}[2020/05/13 v.04 OE-NIK Latex Template by Rácz Dániel, Szebeni Zsuzsanna]
 \RequirePackage{graphicx}
 
 
@@ -444,8 +444,15 @@
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftsubsecdotsep}}
 \renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftsubsubsecdotsep}}
 
-% setting the list of tables and figures to show without inde4nt
+% setting the list of tables and figures to show without indent
 \cftsetindents{fig}{0pt}{2.3em}
 \cftsetindents{tab}{0pt}{2.3em}
 
 \endinput
+
+% captions format for figure and table and such
+\usepackage{caption}
+\usepackage[caption=false]{subfig}
+%\captionsetup{compatibility=false}
+\captionsetup[figure]{font={sc, small}, labelsep=quad}
+\captionsetup[subfloat]{font={small}, labelsep=quad}

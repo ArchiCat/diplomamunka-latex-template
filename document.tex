@@ -62,6 +62,14 @@
 % set the page style
 \makedefaultpagestyle
 
+% csak extrém esetben válassza el a szavakat
+\hyphenpenalty 10000
+% és ne is nagyon kiabáljon alatta, hogy overfull/undefull hbox
+\hbadness 10000 
+
+% szavak, amiket nem szabad elválasztani és szavak, amiket adott helyen kell elválasztani
+\hyphenation{MaxWhere pác-só}
+
 %TODO hivatkozások előtt space-t hagyni
 %TODO képeknél hivatkozást zárójelbe rakni: (Forrás:cite)
 %TODO XMl szekvencia diagram készítése a teljes folyamat leírására
@@ -93,6 +101,24 @@
 		\label{fig:robotik-bin-picking}
 	\end{figure}
 	
+	
+	A \ref{fig:ujlogo} az új logónk látható, a \ref{fig:ujlogo}\subref{fig:oe} ábrán az Óbudai Egyetemé,a \ref{fig:nik} ábrán az Neumann karé,
+	
+	\begin{figure}[H]
+        \centering
+        \subfloat[OE]{
+            \label{fig:oe}
+            \includegraphics[height=4cm]{img/OE.png}
+        }
+        \qquad % a két kép elválasztásának legegyszerűbb módja
+        \subfloat[NIK]{
+            \label{fig:nik}
+            \includegraphics[height=4cm]{img/NIK.png}
+        }
+        \caption{A kar új logója)}
+        \label{fig:ujlogo}
+    \end{figure}
+	
 	\section{Hivatkozások}
 	
 	Ez itt egy folyóirat cikk \cite{journal-example}.
@@ -105,7 +131,15 @@
 	
 	Ez itt egy disszertáció \cite{thesis-example}.
 	
-	\section{Egyenletek}
+	\section{Speciális írásjelek}
+	Ez itt egy magyar írásmód szerinti \leftq{}idézőjel"
+	
+	Ez itt -- láthatóan -- egy gondolatjel. A gondolatjel nem összetévesztendő a kötőjellel.
+	
+	Új bekezdtés kezdhető \textbackslash par paranccsal \par
+	vagy egy sor kihagyásával, 
+	
+	így.
 	
 	\section{Táblázatok}
 	Példaként itt látható egy táblázat (\ref{tab:ur5}. Táblázat)
@@ -153,7 +187,7 @@
 	\end{itemize}
 
 
-	Minden amit a LaTex táblázatokról tudni érdemes: https://www.overleaf.com/learn/latex/tables
+	Minden, amit a LaTex táblázatokról tudni érdemes: https://www.overleaf.com/learn/latex/tables
 	
 	\section{Képletek}
 	Ha egy képletet akarok bemutatni, akkor lássuk a \ref{eq:fig_akarmi} képletet:\\
@@ -281,10 +315,10 @@
 		\end{enumerate}
 	
 	\subsection{Pszeudokódok}
-	    Régi \leftq jó" ismerőseink, a pszeudokódok így írhatóak (algorithmic package), amire például így hivatkozhatunk a szövegben: lásd \ref{alg:tocite}:\\ algoritmus.
+	    Régi \leftq{}jó" ismerőseink, a pszeudokódok így írhatóak (algorithmic package), amire például így hivatkozhatunk a szövegben: lásd \ref{alg:tocite}. algoritmus.
 	    
-	    %paaméterek: az algoritmus megnevezése, a hivatkozása és a szélesége a lap arányaiban
-	\begin{algorithmforus}{algoritmus}{alg:tocite}{0.98}   
+	    % praaméterek: az algoritmus megnevezése, a hivatkozása és a szélesége a lap arányaiban
+	\begin{algorithmforus}{algoritmus}{alg:tocite}{0.97}   
         \begin{algorithmic}[1]
             \Require $x$ - \textbf{egész tömb}, $n$ - \textbf{egész} (\textit{tömb mérete}), $value$ - \textbf{egész}
             \Ensure $y$ - logikai tömb
